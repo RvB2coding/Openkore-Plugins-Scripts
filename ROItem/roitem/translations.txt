@@ -1,0 +1,29 @@
+# This file contains translation constants
+# to be used by the 'rodata' plugin
+# format: <constant> TAB(S) <replacement>
+
+# Starcrumb display
+Very Strong	Forte
+Very Very Strong	Muito Forte 
+Very Very Very Strong	Fortissima
+
+# Element display
+Ice	Glacial
+Earth	Mineral
+Fire	Flamejante
+Wind	Trovejante
+
+# Temporary name used while creator names
+# are not yet received from the server
+Nameless	Unknow
+
+# Card multiplier display
+Double	Bi
+Triple	Trip
+Quadruple	Quad
+
+# Description used for named pet eggs
+Beloved	Beloved
+
+# Broken status
+BROKEN	QUEBRADO
