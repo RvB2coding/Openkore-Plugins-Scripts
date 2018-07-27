@@ -6,9 +6,9 @@ use strict;
 use Exporter;
 
 our @ISA = 'Exporter';
-our @EXPORT = qw(%packet_list_openkore %packet_list_hercules);
+our @EXPORT = qw(%packet_list_openkore_recv %packet_list_openkore_send %packet_list_hercules_recv %packet_list_hercules_send);
 
-our %packet_list_openkore = (
+our %packet_list_openkore_recv = (
 		# PACKETS ZONE TO CLIENT
 		'0069' => ['account_server_info', 'x2 a4 a4 a4 a4 a26 C a*', [qw(sessionID accountID sessionID2 lastLoginIP lastLoginTime accountSex serverInfo)]],
 		'006A' => ['login_error', 'C Z20', [qw(type date)]],
@@ -572,8 +572,9 @@ our %packet_list_openkore = (
 		'0AE4' => ['party_join', 'a4 a4 V v4 C Z24 Z24 Z16 C2', [qw(ID charID role jobID lv x y type name user map item_pickup item_share)]],
  		'0AE5' => ['party_users_info', 'v Z24 a*', [qw(len party_name playerInfo)]],
 		'C350' => ['senbei_vender_items_list'], #new senbei vender, need research
-		
-		
+	);
+	
+our	%packet_list_openkore_send = (
 		# PACKETS CLIENT TO ZONE
 		'0064' => ['master_login', 'V Z24 Z24 C', [qw(version username password master_version)]],
 		'0065' => ['game_login', 'a4 a4 a4 v C', [qw(accountID sessionID sessionID2 userLevel accountSex)]],
@@ -716,7 +717,7 @@ our %packet_list_openkore = (
 		'0ACF' => ['master_login', 'a4 Z25 a32 a5', [qw(game_code username password_rijndael flag)]],
 	);
 	
-our %packet_list_hercules = (
+our %packet_list_hercules_recv = (
 
 		# PACKETS ZONE TO CLIENT
         '0064' => ['CA_LOGIN', 'lclif->p->parse_CA_LOGIN', 100000000],
@@ -1213,8 +1214,9 @@ our %packet_list_hercules = (
         '08f5' => ['CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5', '', 100000000],
         '0a39' => ['CH_MAKE_CHAR', 'chr->parse_char_create_new_char', 100000000],
         '0a6e' => ['CZ_REQ_SEND_RODEX', 'clif->pRodexSendMail', 100000000],
-		
+	);
 
+our %packet_list_hercules_send = (
 		# PACKETS CLIENT TO ZONE
         '0069' => ['AC_ACCEPT_LOGIN','',''],
         '006a' => ['AC_REFUSE_LOGIN','',''],
