@@ -5,7 +5,6 @@ use strict;
 use lib 'C:/strawberry/perl/lib';
 use lib 'C:/strawberry/perl/site/lib';
 use lib 'C:/strawberry/perl/vendor/lib';
-use lib 'C:/strawberry/perl/vendor/lib';
 use warnings;
 use Globals;
 use Plugins;
