@@ -22,5 +22,7 @@ $self->encryptMessageID(\$msg);
 Log will be created in:
 logs\packtes.txt
 
+### ScreenShots
+![logo](https://media.discordapp.net/attachments/383600499280183296/479069165483720734/unknown.png)
 ### Credits
 Plugin made by alisonrag
