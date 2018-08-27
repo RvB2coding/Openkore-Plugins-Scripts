@@ -21,7 +21,7 @@ while (my $row = <$input>) {
 	} elsif ($row =~ /packet\(0x([a-zA-Z0-9]{4})\,(-?\d+)/) { # packet(0x0ae7,38,clif->pDull/*,XXX*/);
 		
 		my $type = "unkn";
-		if($packet_list_hercules_recv{lc($1)}[0]) { $type = "recv"; } elsif($packet_list_hercules_send{lc($1)}[0]) {$type = "send";}
+		if($packet_list_hercules_recv{lc($1)}[0]) { $type = "send"; } elsif($packet_list_hercules_send{lc($1)}[0]) {$type = "recv";}
 		my $openkore_sub = $packet_list_openkore_recv{uc($1)}[0] || $packet_list_openkore_send{uc($1)}[0] || "";
 		my $packet_name = $packet_list_hercules_recv{lc($1)}[0] || $packet_list_hercules_send{lc($1)}[0] || "";
 		my $hercules_function = $packet_list_hercules_recv{lc($1)}[1] || $packet_list_hercules_send{lc($1)}[1] || "";
