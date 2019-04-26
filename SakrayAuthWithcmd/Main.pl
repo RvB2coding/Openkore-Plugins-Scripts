@@ -139,10 +139,16 @@ sub Login_to_client {
 		if($response->decoded_content =~/\w+\|(\w+)\|\w+\|\w+\|\w+/) {
 			if($1 ne $current_token) { 
 				print "Done\n";
-				system("RagexeRE.exe 1sak1 -t:$1 $username G Sakray");
-				exit;
+				runclient($token,$username);
 			}
 		}
 	
 	}
+}
+
+
+sub runclient {
+	my ( $token, $username ) = @_;
+	system("RagexeRE.exe 1sak1 -t:$token $username G Sakray");
+	exit;
 }
